@@ -1,5 +1,5 @@
 @import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,700,300i,600i,700i|Raleway:600,800");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500,600,700,300i,500i,600i,700i|Raleway:600,800");
 
 /*
 	Paradigm Shift by HTML5 UP
@@ -34,6 +34,80 @@
 		justify-content:flex-start;
 	}
 }
+
+html {
+	scroll-behavior: smooth;
+}
+
+div.sticky {
+	
+	top: 25px;
+	left: auto;
+	right: 25px;
+
+
+
+	position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+	overflow: auto; /* Enable scroll if needed */
+
+
+  }
+  
+#navigation {
+  
+	height: 45px; 
+	width: 22rem; 
+	background-color: rgba(48, 46, 45, 0.9); 
+	border-radius: 7px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+  
+	font-size: 20px;
+	color: #f7f7f7;
+
+	transition: background-color 0.3s ease-in-out
+
+}
+
+#navigation:hover {
+	background-color: rgba(48, 46, 45, 1); 
+}
+  
+.navi {
+	/* Estilo de enlace normal */
+	color: inherit;
+	transition: filter 0.3s ease-in-out, font-size 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transiciones suaves para el efecto de brillo, cambio de tamaño y transformación */
+	font-size: 20px; /* Tamaño de fuente normal */
+	text-decoration: none; /* Quita la decoración de subrayado del enlace */
+
+	font-family: "Source Sans Pro", Helvetica, sans-serif;
+
+	outline: none;
+
+	border: none;
+
+
+}
+  
+/* Estilo de enlace de navegación con efecto de brillo y tamaño más grande al pasar el ratón sobre él */
+.navi:hover {
+	  filter: brightness(200%); /* Cambia el brillo del texto al 150% (efecto de brillo) */
+	  font-size: 20px; /* Tamaño de fuente más grande */
+	  opacity: 1; /* Opacidad normal */
+	  font-weight: 600;
+}
+	
+	/* Estilo de enlaces de navegación cuando se hace hover en uno de ellos */
+#navigation:hover .navi:not(:hover) {
+  opacity: 0.95; /* Opacidad del 70% en los enlaces que no se les hace hover */
+  font-size: 17px; /* Tamaño de fuente ligeramente más pequeño en los enlaces que no se les hace hover */
+}
+  
+
 
 
 html, body, div, span, applet, object,
