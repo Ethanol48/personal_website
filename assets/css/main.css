@@ -52,12 +52,18 @@ div.sticky {
 	overflow: auto; /* Enable scroll if needed */
 
 
-  }
+}
+
+.izquierda-sticky {
+    left: 25px !important;
+    right: auto !important;
+}
+
   
 #navigation {
   
 	height: 45px; 
-	width: 22rem; 
+	width: 19rem; 
 	background-color: rgba(48, 46, 45, 0.9); 
 	border-radius: 7px;
 	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
