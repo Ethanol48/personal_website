@@ -85,6 +85,8 @@
   padding: 5px;
 
   overflow: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
 }
 
 .icon {
