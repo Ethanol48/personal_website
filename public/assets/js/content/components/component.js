@@ -1,4 +1,4 @@
-export function Component(
+export function projectComponent(
   element,
   photoPath,
   websitebLink,
