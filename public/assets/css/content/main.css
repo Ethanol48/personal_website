@@ -86,7 +86,7 @@
 
   overflow: scroll;
   overflow-x: hidden;
-  scrollbar-width: none;
+  scrollbar-width: thin;
 }
 
 .icon {

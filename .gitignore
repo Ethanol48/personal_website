@@ -73,3 +73,6 @@ firebase.json
 
 # Custom
 pruebas
+*.DS_Store
+
+
