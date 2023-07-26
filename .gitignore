@@ -71,8 +71,10 @@ firebase.json
 
 
 
+
 # Custom
-pruebas
+.firebase
+
 *.DS_Store
 
 
