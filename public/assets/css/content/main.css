@@ -21,6 +21,8 @@
 .project-photo {
   border-radius: 10px;
   height: 60%;
+  display: flex;
+  justify-content: center;
 
 }
 
