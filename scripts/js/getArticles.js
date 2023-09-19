@@ -65,7 +65,7 @@ async function scrape() {
 function modifyHTML(scrapedData) {
   // Read the HTML file
   fs.readFile(
-    "/Users/michaelbernardrouimi/code/Ethanol48/personal_website/pruebas/desired.html",
+    "/Users/michaelbernardrouimi/code/Ethanol48/personal_website/scripts/desired.html",
     "utf8",
     (err, data) => {
       if (err) {
@@ -73,7 +73,7 @@ function modifyHTML(scrapedData) {
         return;
       }
 
-      if (scrapedData === []) {
+      if (scrapedData == []) {
         console.error("Scrapped data is empty");
       }
 
@@ -81,9 +81,9 @@ function modifyHTML(scrapedData) {
         const dom = new JSDOM(data);
         const document = dom.window.document;
 
-        const divArt = document.querySelector("#medium-articulos");
+        // const divArt = document.querySelector("#medium-articulos");
 
-        new articuloComponent(divArt, scrapedData, document);
+        // new articuloComponent(divArt, scrapedData, document);
 
         const projects = document.querySelectorAll(".project");
 
@@ -95,6 +95,7 @@ function modifyHTML(scrapedData) {
           const website = project.attributes["website"].textContent;
           const photo = project.attributes["photo"].textContent;
           const description = project.attributes["desc"].textContent;
+          const title = project.attributes["title"].textContent;
 
           new projectComponent(
             document,
@@ -102,13 +103,14 @@ function modifyHTML(scrapedData) {
             photo,
             website,
             github,
+            title,
             description
           );
         });
 
         console.log("the file was modified without problems!!!");
         fs.writeFileSync(
-          "/Users/michaelbernardrouimi/code/Ethanol48/personal_website/public/content.html",
+          "/Users/michaelbernardrouimi/code/Ethanol48/personal_website/scripts/js/modified.html",
           dom.serialize()
         );
       } catch (err) {
@@ -119,7 +121,8 @@ function modifyHTML(scrapedData) {
 }
 
 async function main() {
-  let data = await scrape();
+  // let data = await scrape();
+  let data = []
   modifyHTML(data);
 }
 
