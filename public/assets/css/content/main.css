@@ -1,6 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500,600,700,300i,500i,600i,700i|Raleway:600,800");
-@import url(fontawesome-all.min.css);
-
 
 .project-unidad {
   border-radius: 10px;
@@ -50,14 +48,11 @@
 
   transition: transform 0.1s ease-in;
   /* margin-right: auto; */
-
-
 }
 
 .project-link:hover {
   transition: scale;
   transform: scale3d(1.05, 1.05, 1);
-
 }
 
 .project-banda {

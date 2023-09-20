@@ -1,35 +1,10 @@
-  // <div class="showcaseContainer">
-  //
-  //   <div class="showcase hidden">
-  //     <img src="./images/projects/NFT-Collection.jpg" alt="Project photo" class="project-imagen">
-  //
-  //     <div class="info">
-  //       <div class="texts">
-  //         <p class="title">Crypto Devs</p>
-  //         <p class="desc">NFT Project using previously a whitelist with special priviledges</p>
-  //       </div>
-  //
-  //       <div class="links-wrapper">
-  //         <a href="https://nft-minting-collection.vercel.app" class="project-link">
-  //           <i class="fa-solid fa-globe fa-2xl icon"></i></a>
-  //
-  //         <a href="https://github.com/Ethanol48/NFT-minting-Collection" class="project-link">
-  //           <i class="fa-brands fa-github fa-2xl icon"></i>
-  //         </a>
-  //
-  //       </div>
-  //     </div>
-  //   </div>
-
-
 export function projectComponent(
   document,
   element,
   photoPath,
   websitebLink,
   githubRepo,
-  projectTitle,
-  projectDescription
+  description
 ) {
   function createIcon(fontAweIcon1, fontAweIcon2, options = []) {
     const icono = document.createElement("i");
@@ -47,52 +22,26 @@ export function projectComponent(
     return icono;
   }
 
-  const showcase = document.createElement("div");
-  showcase.classList.add("showcase")
-  showcase.classList.add("hidden")
+  // la foto
+  const marco = document.createElement("div");
+  marco.classList.add("project-photo");
 
-  // crear imagen
   const img = document.createElement("img");
   img.setAttribute("src", photoPath);
   img.setAttribute("alt", "Project photo");
+
   img.classList.add("project-imagen");
 
-  // add img to showcase div
-  showcase.appendChild(img)
+  marco.appendChild(img);
 
-  // creating info div
-  // inside of this div needs to be other two,
-  // the 'texts' and 'links'
-  const info = document.createElement("div");
-  info.classList.add("info")
-  showcase.appendChild(info);
+  // banda con links y descripción
+  const banda = document.createElement("div");
 
-  // creating div texts
-  // it has two divs inside of it
-  const texts = document.createElement("div");
-  texts.classList.add("texts");
-
-  const title = document.createElement("p");
-  title.classList.add("title")
-  title.innerHTML = projectTitle
-
+  // descriptción
   const desc = document.createElement("p");
-  desc.classList.add("desc")
-  desc.innerHTML = projectDescription
-
-  // pushing objects to texts
-  texts.appendChild(title)
-  texts.appendChild(desc)
-
-  // pushing texts to info
-  info.appendChild(texts)
-
-
-  // creating link wrapper
-  const linkWrapper = document.createElement("div");
-  linkWrapper.classList.add("links-wrapper");
-
-  // creating the icons
+  desc.innerHTML = description;
+  desc.classList.add("desc");
+  banda.appendChild(desc);
 
   //creating anchors
   const linkWebsite = document.createElement("a");
@@ -112,28 +61,21 @@ export function projectComponent(
   linkWebsite.classList.add("project-link");
   linkGithub.classList.add("project-link");
 
-  // adding links to wrapper
-  linkWrapper.appendChild(linkWebsite);
-  linkWrapper.appendChild(linkGithub);
+  banda.classList.add("project-banda");
 
-  // adding wrapper to showcase
-  info.appendChild(linkWrapper);
+  banda.appendChild(linkWebsite);
+  banda.appendChild(linkGithub);
 
+  element.appendChild(marco);
+  element.appendChild(banda);
 
-  const parent = element.parentElement;
-  parent.appendChild(showcase);
-
-  element.remove()
-  
-
-  // element.removeAttribute("role");
-  // element.removeAttribute("githubRepo");
-  // element.removeAttribute("website");
-  // element.removeAttribute("photo");
-  // element.removeAttribute("desc");
-  // element.removeAttribute("title");
-  // // element.classList.add("project-unidad");
-  // element.classList.remove("project");
+  element.removeAttribute("role");
+  element.removeAttribute("githubRepo");
+  element.removeAttribute("website");
+  element.removeAttribute("photo");
+  element.removeAttribute("desc");
+  element.classList.add("project-unidad");
+  element.classList.remove("project");
 }
 
 export function articuloComponent(element, scrapedData, document) {
