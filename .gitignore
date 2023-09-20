@@ -75,6 +75,8 @@ firebase.json
 # Custom
 .firebase
 
+scripts/
+
 *.DS_Store
 
 
